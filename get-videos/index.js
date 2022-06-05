@@ -41,7 +41,7 @@ function getVideos(page, callback){
 
                 const id = video.id;
                 const tags = video.tags.join(' ');
-                const filename = `videos/${id}-${tags}.mp4`;
+                const filename = `../video/${id}-${tags}.mp4`;
                 const video_files = video.video_files;
                 const video_file = video_files.reduce((a, b) => a.height > b.height ? a : b);
                 const uri = video_file.link;
