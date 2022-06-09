@@ -32,10 +32,19 @@ let count = 0;
 
 let page = getRandomInt(10);
 
+const tags = ["nature", "Ocean", "Architecture", "landscape", "forest", "beach", "sky", "India", "kissing"
+, "couple", "romantic", "animals", "dogs", "cats", "pets", "dark", "coffee", "lingerie", "bikini", "swimwear",
+ "cars", "light", "erotic"]
+const query = tags[Math.floor(Math.random() * tags.length)];
+
+console.log(query)
+
 function getVideos(page, callback){
-        client.videos.popular({
-            per_page: 1000,
-            page: page
+        client.videos.search({
+            query: query,
+            per_page: 10,
+            page: page,
+            orientation: 'portrait'
         }).then(videos => {
             videos.videos.forEach(video => {
 
