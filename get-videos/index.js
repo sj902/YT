@@ -33,8 +33,8 @@ let count = 0;
 let page = getRandomInt(10);
 
 const tags = ["nature", "Ocean", "Architecture", "landscape", "forest", "beach", "sky", "India", "kissing"
-, "couple", "romantic", "animals", "dogs", "cats", "pets", "dark", "coffee", "lingerie", "bikini", "swimwear",
- "cars", "light", "erotic"]
+, "couple", "romantic", "animals", "dogs", "cats", "pets", "dark", "coffee", 
+ "cars", "light", "hindu"]
 const query = tags[Math.floor(Math.random() * tags.length)];
 
 console.log(query)
@@ -46,11 +46,11 @@ function getVideos(page, callback){
             page: page,
             orientation: 'portrait'
         }).then(videos => {
-            videos.videos.forEach(video => {
+            videos.videos.forEach((video, idx) => {
 
                 const id = video.id;
                 const tags = video.tags.join(' ');
-                const filename = `../video/${id}-${tags}.mp4`;
+                const filename = `../video/${query} whatsapp status-${idx}.mp4`;
                 const video_files = video.video_files;
                 const video_file = video_files.reduce((a, b) => a.height > b.height ? a : b);
                 const uri = video_file.link;
