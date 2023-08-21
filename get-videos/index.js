@@ -2,9 +2,7 @@ const {
     createClient
 } = require('pexels');
 const fs = require('fs');
-const request = require('request');
 const axios = require('axios');
-const { setTimeout } = require('timers/promises');
 
 // const client = createClient('563492ad6f91700001000001e6e009f6be3d4995ac8f829a87ca99e1');
 const client = createClient('563492ad6f917000010000013734a1a3a3914d87992ea642b8c3006a');
@@ -47,8 +45,7 @@ function getVideos(page, callback){
             videos.videos.forEach((video, idx) => {
 
                 const id = video.id;
-                const tags = video.tags.join(' ');
-                const filename = `../video/${query} whatsapp status-${idx}.mp4`;
+                const filename = `../video/${query}-girl-${idx}-${Math.floor(Math.random() * 10000)}.mp4`;
                 const video_files = video.video_files;
                 const video_file = video_files.reduce((a, b) => a.height > b.height ? a : b);
                 const uri = video_file.link;
