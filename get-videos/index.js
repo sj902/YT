@@ -32,9 +32,7 @@ let count = 0;
 
 let page = getRandomInt(10);
 
-const tags = ["nature", "Ocean", "Architecture", "landscape", "forest", "beach", "sky", "India", "kissing"
-, "couple", "romantic", "animals", "dogs", "cats", "pets", "dark", "coffee", 
- "cars", "light", "hindu"]
+const tags = ["bikini", "lingerie"];
 const query = tags[Math.floor(Math.random() * tags.length)];
 
 console.log(query)
