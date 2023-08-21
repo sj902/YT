@@ -17,8 +17,9 @@ mkdir $op_folder
 stock_audio_folder="../stock-music" 
 
 FILES="${video_folder}/*"
-for f in $FILES
+for g in $FILES
 do
+  f="$g"
   echo "Processing $f file..."
 
   # get file size
