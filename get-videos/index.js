@@ -30,7 +30,7 @@ let count = 0;
 
 let page = getRandomInt(10);
 
-const tags = ["bikini", "lingerie"];
+const tags = ["bikini", "lingerie", "swimsuit"];
 const query = tags[Math.floor(Math.random() * tags.length)];
 
 console.log(query)
@@ -45,7 +45,7 @@ function getVideos(page, callback){
             videos.videos.forEach((video, idx) => {
 
                 const id = video.id;
-                const filename = `../video/${query}-girl-${idx}-${Math.floor(Math.random() * 10000)}.mp4`;
+                const filename = `../video/${bikini}-swimsuit-girl-${idx}-${Math.floor(Math.random() * 10000)}.mp4`;
                 const video_files = video.video_files;
                 const video_file = video_files.reduce((a, b) => a.height > b.height ? a : b);
                 const uri = video_file.link;

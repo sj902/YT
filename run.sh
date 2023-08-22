@@ -5,3 +5,6 @@ node index.js
 
 cd ../joiner
 ./joiner.sh
+
+cd ../video
+rm *
